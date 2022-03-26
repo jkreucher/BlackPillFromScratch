@@ -1,4 +1,4 @@
-# Blackpill from Scratch
+# Black Pill from Scratch
 
 Copyright 2022 Jannik Kreucher
 
