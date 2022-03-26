@@ -15,11 +15,7 @@ The goal of this project is to write all hardware drivers for the Blackpill from
 
 Install ST-Link tools
 ```
-sudo apt-get install gcc build-essential cmake libusb-1.0 libusb-1.0-0-dev libgtk-3-dev pandoc
-git clone https://github.com/stlink-org/stlink.git
-cd stlink
-make release
-sudo make install
+sudo apt install stlink-tools
 ```
 
 Download arm-gcc from [their website](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads). Then extract the archieve
@@ -51,6 +47,13 @@ git clone https://github.com/openocd-org/openocd.git
 make
 sudo make install
 ```
+
+### Erase Flash Memory
+Now try to erase the flash memory of your Black Pill. The board might come with a protected bootloader.
+```
+st-flash erase
+```
+When you encounter a error hold down both the NRST and the BOOT0 button. Then release the NRST button while the other one is still pressed. Finally release the BOOT0 button as well and try to erase the flash memory again.
 
 ### Setting up VS Code
 Install the plugin `Cortex-Debug` by marus25. Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter.
