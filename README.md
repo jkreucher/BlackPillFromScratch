@@ -15,7 +15,11 @@ The goal of this project is to write all hardware drivers for the Blackpill from
 
 Install ST-Link tools
 ```
-sudo apt install stlink-tools stlink-gui
+sudo apt-get install gcc build-essential cmake libusb-1.0 libusb-1.0-0-dev libgtk-3-dev pandoc
+git clone https://github.com/stlink-org/stlink.git
+cd stlink
+make release
+sudo make install
 ```
 
 Download arm-gcc from [their website](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads). Then extract the archieve
@@ -29,6 +33,7 @@ sudo ln -s /usr/share/gcc-arm-none-eabi-<version>-x86_64-linux/bin/arm-none-eabi
 sudo ln -s /usr/share/gcc-arm-none-eabi-<version>-x86_64-linux/bin/arm-none-eabi-g++ /usr/bin/arm-none-eabi-g++
 sudo ln -s /usr/share/gcc-arm-none-eabi-<version>-x86_64-linux/bin/arm-none-eabi-gdb /usr/bin/arm-none-eabi-gdb
 sudo ln -s /usr/share/gcc-arm-none-eabi-<version>-x86_64-linux/bin/arm-none-eabi-size /usr/bin/arm-none-eabi-size
+sudo ln -s /usr/share/gcc-arm-none-eabi-<version>-x86_64-linux/bin/arm-none-eabi-objcopy /usr/bin/arm-none-eabi-objcopy
 ```
 
 When running `arm-none-eabi-gdb` you might encounter problems with missing libraries. This can be fixed my linking to a newer version
