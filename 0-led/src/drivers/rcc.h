@@ -6,6 +6,13 @@
 #include "stm32f4.h"
 
 
+// Enable Defines
+#define RCC_EN_GPIOA	(1 << 0)	// ahb1
+#define RCC_EN_GPIOB	(1 << 1)	// ahb1
+#define RCC_EN_GPIOC	(1 << 2)	// ahb1
+#define RCC_EN_POWER	(1 << 28)	// ahb1
+
+
 // RCC REGISTER MAP
 // see Reference Manual on page 136
 typedef struct {
