@@ -5,7 +5,7 @@ int main() {
 	// initialize everything we need
 	rcc_init();
 	// set built-in led to output push-pull
-	gpio_mode(GPIOC, 13, GPIO_OUT_PP);
+	gpio_mode(GPIOC, 13, GPIO_OUT);
 	// set built-in key to input pull-up
 	gpio_mode(GPIOA, 0, GPIO_IN_UP);
 

@@ -62,4 +62,8 @@ ext install marus25.cortex-debug
 ```
 
 Now open a project folder with VS Code and try debugging on your Blackpill.
+```
+cd 0-led/
+code .
+```
 

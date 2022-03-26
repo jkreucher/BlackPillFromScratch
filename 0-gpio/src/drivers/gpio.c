@@ -17,7 +17,7 @@ void gpio_mode(volatile GPIO_t* port, uint8_t pin, uint8_t mode) {
 }
 
 
-void gpio_set_alt(volatile GPIO_t* port, uint8_t pin, uint8_t alt_func) {
+void gpio_alt(volatile GPIO_t* port, uint8_t pin, uint8_t alt_func) {
 	if(pin < 8) {
 		port->afrl = (port->afrl & ~(0b1111 << pin*4)) | (alt_func << pin*4);
 	} else {

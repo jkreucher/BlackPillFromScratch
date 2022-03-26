@@ -41,7 +41,7 @@ extern volatile GPIO_t* GPIOC;
 
 // public functions
 void gpio_mode(volatile GPIO_t* port, uint8_t pin, uint8_t mode);
-void gpio_set_alt(volatile GPIO_t* port, uint8_t pin, uint8_t alt_func);
+void gpio_alt(volatile GPIO_t* port, uint8_t pin, uint8_t alt_func);
 void gpio_write(volatile GPIO_t* port, uint8_t pin, uint8_t state);
 uint8_t gpio_read(volatile GPIO_t* port, uint8_t pin);
 

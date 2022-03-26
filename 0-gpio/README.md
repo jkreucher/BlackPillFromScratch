@@ -1,4 +1,4 @@
-# Getting GPIOs work
+# Getting the onboard led to work
 
 Copyright 2022  Jannik Kreucher
 
@@ -35,4 +35,4 @@ The RCC (Reset and Clock Control) register is one if not the most important regi
 
 ## The GPIO registers
 
-The GPIO (General Purpose Input Output) registers control the behaviour of the I/O ports. See [gpio.h](src/drivers/gpio.h) for the GPIO register map. Use the function `gpio_mode(port, pin, mode)` to configure a GPIO pin. The argument `port` can be any of GPIOA, GPIOB or GPIOC. Any GPIO pin can be configured as Input or Output with different functions like open drain output, pull up or pull down resistor. Most pins can be used with an alternate function like SPI bus signals. To configure the alternate function use `gpio_set_alt(port, pin, alt_func)` to set the specific function described in the datasheet on page 47.
+The GPIO (General Purpose Input Output) registers control the behaviour of the I/O ports. See [gpio.h](src/drivers/gpio.h) for the GPIO register map. Use the function `gpio_mode(port, pin, mode)` to configure a GPIO pin. The argument `port` can be any of GPIOA, GPIOB or GPIOC. Any GPIO pin can be configured as Input or Output with different functions like open drain output, pull up or pull down resistor. Most pins can be used with an alternate function like SPI bus signals. To configure the alternate function use `void gpio_alt(port, pin, alt_func)` where alt_func is the number of the alternate function described in STs [datasheet](https://www.st.com/resource/en/datasheet/stm32f411ce.pdf).
