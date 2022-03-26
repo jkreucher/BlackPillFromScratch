@@ -1,4 +1,7 @@
 {
 	"cortex-debug.armToolchainPath": "/usr/bin",
-	"cortex-debug.variableUseNaturalFormat": false
+	"cortex-debug.variableUseNaturalFormat": false,
+	"files.associations": {
+		"rcc.h": "c"
+	}
 }
