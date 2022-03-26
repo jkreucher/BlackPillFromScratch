@@ -1,4 +1,4 @@
-# Getting the onboard led to work
+# Getting the GPIOs to work
 
 Copyright 2022  Jannik Kreucher
 
