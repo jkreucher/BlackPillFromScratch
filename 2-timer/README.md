@@ -1,4 +1,4 @@
-# Making the timers run
+# Making the Timers Run
 
 Copyright 2022  Jannik Kreucher
 
