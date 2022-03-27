@@ -32,7 +32,7 @@ sudo ln -s /usr/share/gcc-arm-none-eabi-<version>-x86_64-linux/bin/arm-none-eabi
 sudo ln -s /usr/share/gcc-arm-none-eabi-<version>-x86_64-linux/bin/arm-none-eabi-objcopy /usr/bin/arm-none-eabi-objcopy
 ```
 
-When running `arm-none-eabi-gdb` you might encounter problems with missing libraries. This can be fixed my linking to a newer version
+When running `arm-none-eabi-gdb` you might encounter problems with missing libraries. This can be fixed by linking to a newer version
 ```
 sudo apt install libncurses-dev
 sudo ln -s /usr/lib/x86_64-linux-gnu/libncurses.so.6 /usr/lib/x86_64-linux-gnu/libncurses.so.5
@@ -49,11 +49,11 @@ sudo make install
 ```
 
 ### Erase Flash Memory
-Now try to erase the flash memory of your Black Pill. The board might come with a protected bootloader.
+Now try to erase the flash memory of your Black Pill. The board might boot into the protected bootloader.
 ```
 st-flash erase
 ```
-When you encounter a error hold down both the NRST and the BOOT0 button. Then release the NRST button while the other one is still pressed. Finally release the BOOT0 button as well and try to erase the flash memory again.
+When you encounter an error hold down both the NRST and the BOOT0 button. Then release the NRST button while the other one is still pressed. Finally release the BOOT0 button as well and try to erase the flash memory again.
 
 ### Setting up VS Code
 Install the plugin `Cortex-Debug` by marus25. Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter.
