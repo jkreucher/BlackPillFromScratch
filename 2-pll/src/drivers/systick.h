@@ -8,10 +8,10 @@
 
 // SYSTICK REGISTER MAP
 typedef struct {
-	uint32_t ctrl;	// 0x00 - control and status register
-	uint32_t load;	// 0x04 - reload value register
-	uint32_t val;	// 0x08 - current value register
-	uint32_t calib;	// 0x0C - calibration value register
+	uint32_t ctrl;		// 0x00 - control and status register
+	uint32_t load;		// 0x04 - reload value register
+	uint32_t val;		// 0x08 - current value register
+	uint32_t calib;		// 0x0C - calibration value register
 } SYSTICK_t;
 
 

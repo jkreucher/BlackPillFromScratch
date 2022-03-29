@@ -4,7 +4,7 @@ void rcc_init() {
 	// puts rcc struct to the right place
 	// "volatile" tells the compiler that rcc can be changed by hardware
 	volatile RCC_t* rcc = (RCC_t*)ADDR_BASE_RCC;
-
+	
 	// enable external 25MHz clock
 	rcc->cr |= (1 << 16);
 	// wait for HSE ready
@@ -24,7 +24,7 @@ void rcc_init() {
 	// wait for pll
 	while(!(rcc->cr & (1 << 25)));
 
-	// AHB prescaler - divide by 0
+	// AHB prescaler - divide by 1
 	rcc->cfgr |= (0b0000 << 4);
 	// APB1 (low speed, max 50MHz) - divide AHB by 4
 	rcc->cfgr |= (0b101 << 10);
@@ -45,4 +45,7 @@ void rcc_init() {
 	rcc->ahb1enr |= RCC_EN_GPIOA | RCC_EN_GPIOB | RCC_EN_GPIOC;
 	// enable power control
 	rcc->ahb1enr |= RCC_EN_POWER;
+	// enable timer
+	rcc->apb1enr |= RCC_EN_TIM2;
+	rcc->apb2enr |= RCC_EN_TIM1;
 }

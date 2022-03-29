@@ -41,11 +41,28 @@ Discarded input sections
  .data          0x0000000000000000        0x0 ./src/drivers/gpio.o
  .bss           0x0000000000000000        0x0 ./src/drivers/gpio.o
  .text.gpio_alt
-                0x0000000000000000       0x3a ./src/drivers/gpio.o
+                0x0000000000000000       0x44 ./src/drivers/gpio.o
  .text.gpio_read
-                0x0000000000000000        0xe ./src/drivers/gpio.o
- .data.GPIOA    0x0000000000000000        0x4 ./src/drivers/gpio.o
- .data.GPIOB    0x0000000000000000        0x4 ./src/drivers/gpio.o
+                0x0000000000000000       0x18 ./src/drivers/gpio.o
+ .text          0x0000000000000000        0x0 ./src/drivers/nvic.o
+ .data          0x0000000000000000        0x0 ./src/drivers/nvic.o
+ .bss           0x0000000000000000        0x0 ./src/drivers/nvic.o
+ .text.nvic_enable
+                0x0000000000000000       0x18 ./src/drivers/nvic.o
+ .text.nvic_disable
+                0x0000000000000000       0x1c ./src/drivers/nvic.o
+ .debug_info    0x0000000000000000      0x1db ./src/drivers/nvic.o
+ .debug_abbrev  0x0000000000000000       0xec ./src/drivers/nvic.o
+ .debug_loc     0x0000000000000000       0xad ./src/drivers/nvic.o
+ .debug_aranges
+                0x0000000000000000       0x28 ./src/drivers/nvic.o
+ .debug_ranges  0x0000000000000000       0x18 ./src/drivers/nvic.o
+ .debug_line    0x0000000000000000      0x119 ./src/drivers/nvic.o
+ .debug_str     0x0000000000000000      0x1cc ./src/drivers/nvic.o
+ .comment       0x0000000000000000       0x4a ./src/drivers/nvic.o
+ .debug_frame   0x0000000000000000       0x30 ./src/drivers/nvic.o
+ .ARM.attributes
+                0x0000000000000000       0x2e ./src/drivers/nvic.o
  .text          0x0000000000000000        0x0 ./src/drivers/systick.o
  .data          0x0000000000000000        0x0 ./src/drivers/systick.o
  .bss           0x0000000000000000        0x0 ./src/drivers/systick.o
@@ -119,6 +136,7 @@ LOAD ./src/main.o
 LOAD ./src/drivers/flash.o
 LOAD ./src/drivers/rcc.o
 LOAD ./src/drivers/gpio.o
+LOAD ./src/drivers/nvic.o
 LOAD ./src/drivers/systick.o
 LOAD /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a
 LOAD /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libm.a
@@ -144,7 +162,7 @@ LOAD /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crt
                 0x0000000008000000                g_pfnVectors
                 0x0000000008000198                . = ALIGN (0x4)
 
-.text           0x0000000008000198      0x244
+.text           0x0000000008000198      0x260
                 0x0000000008000198                . = ALIGN (0x4)
  *(.text)
  .text          0x0000000008000198       0x40 /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
@@ -220,131 +238,130 @@ LOAD /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crt
                 0x0000000008000220                I2C1_ER_IRQHandler
                 0x0000000008000220                DMA2_Stream6_IRQHandler
                 0x0000000008000220                DMA1_Stream3_IRQHandler
- *fill*         0x0000000008000222        0x2 
- .text.main     0x0000000008000224       0x44 ./src/main.o
-                0x0000000008000224                main
+ .text.main     0x0000000008000222       0x3a ./src/main.o
+                0x0000000008000222                main
  .text.flash_init
-                0x0000000008000268       0x18 ./src/drivers/flash.o
-                0x0000000008000268                flash_init
+                0x000000000800025c       0x18 ./src/drivers/flash.o
+                0x000000000800025c                flash_init
  .text.rcc_init
-                0x0000000008000280       0x9c ./src/drivers/rcc.o
-                0x0000000008000280                rcc_init
+                0x0000000008000274       0xac ./src/drivers/rcc.o
+                0x0000000008000274                rcc_init
  .text.gpio_mode
-                0x000000000800031c       0x4e ./src/drivers/gpio.o
-                0x000000000800031c                gpio_mode
+                0x0000000008000320       0x5c ./src/drivers/gpio.o
+                0x0000000008000320                gpio_mode
  .text.gpio_write
-                0x000000000800036a       0x1a ./src/drivers/gpio.o
-                0x000000000800036a                gpio_write
+                0x000000000800037c       0x24 ./src/drivers/gpio.o
+                0x000000000800037c                gpio_write
  .text.systick_init
-                0x0000000008000384       0x1c ./src/drivers/systick.o
-                0x0000000008000384                systick_init
+                0x00000000080003a0       0x1c ./src/drivers/systick.o
+                0x00000000080003a0                systick_init
  .text.SysTick_Handler
-                0x00000000080003a0       0x10 ./src/drivers/systick.o
-                0x00000000080003a0                SysTick_Handler
- .text.delay    0x00000000080003b0       0x14 ./src/drivers/systick.o
-                0x00000000080003b0                delay
+                0x00000000080003bc       0x10 ./src/drivers/systick.o
+                0x00000000080003bc                SysTick_Handler
+ .text.delay    0x00000000080003cc       0x14 ./src/drivers/systick.o
+                0x00000000080003cc                delay
  *(.glue_7)
- .glue_7        0x00000000080003c4        0x0 linker stubs
+ .glue_7        0x00000000080003e0        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x00000000080003c4        0x0 linker stubs
+ .glue_7t       0x00000000080003e0        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x00000000080003c4        0x0 /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
+ .eh_frame      0x00000000080003e0        0x0 /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
  *(.init)
- .init          0x00000000080003c4        0x4 /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crti.o
-                0x00000000080003c4                _init
- .init          0x00000000080003c8        0x8 /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtn.o
+ .init          0x00000000080003e0        0x4 /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crti.o
+                0x00000000080003e0                _init
+ .init          0x00000000080003e4        0x8 /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtn.o
  *(.fini)
- .fini          0x00000000080003d0        0x4 /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crti.o
-                0x00000000080003d0                _fini
- .fini          0x00000000080003d4        0x8 /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtn.o
-                0x00000000080003dc                . = ALIGN (0x4)
-                0x00000000080003dc                _etext = .
+ .fini          0x00000000080003ec        0x4 /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crti.o
+                0x00000000080003ec                _fini
+ .fini          0x00000000080003f0        0x8 /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtn.o
+                0x00000000080003f8                . = ALIGN (0x4)
+                0x00000000080003f8                _etext = .
 
-.vfp11_veneer   0x00000000080003dc        0x0
- .vfp11_veneer  0x00000000080003dc        0x0 linker stubs
+.vfp11_veneer   0x00000000080003f8        0x0
+ .vfp11_veneer  0x00000000080003f8        0x0 linker stubs
 
-.v4_bx          0x00000000080003dc        0x0
- .v4_bx         0x00000000080003dc        0x0 linker stubs
+.v4_bx          0x00000000080003f8        0x0
+ .v4_bx         0x00000000080003f8        0x0 linker stubs
 
-.iplt           0x00000000080003dc        0x0
- .iplt          0x00000000080003dc        0x0 /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
+.iplt           0x00000000080003f8        0x0
+ .iplt          0x00000000080003f8        0x0 /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
 
-.rel.dyn        0x00000000080003dc        0x0
- .rel.iplt      0x00000000080003dc        0x0 /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
+.rel.dyn        0x00000000080003f8        0x0
+ .rel.iplt      0x00000000080003f8        0x0 /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
 
-.rodata         0x00000000080003dc        0x0
-                0x00000000080003dc                . = ALIGN (0x4)
+.rodata         0x00000000080003f8        0x0
+                0x00000000080003f8                . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
-                0x00000000080003dc                . = ALIGN (0x4)
+                0x00000000080003f8                . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x00000000080003dc        0x0
-                0x00000000080003dc                __exidx_start = .
+.ARM            0x00000000080003f8        0x0
+                0x00000000080003f8                __exidx_start = .
  *(.ARM.exidx*)
-                0x00000000080003dc                __exidx_end = .
+                0x00000000080003f8                __exidx_end = .
 
-.preinit_array  0x00000000080003dc        0x0
-                0x00000000080003dc                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x00000000080003f8        0x0
+                0x00000000080003f8                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x00000000080003dc                PROVIDE (__preinit_array_end = .)
+                0x00000000080003f8                PROVIDE (__preinit_array_end = .)
 
-.init_array     0x00000000080003dc        0x4
-                0x00000000080003dc                PROVIDE (__init_array_start = .)
+.init_array     0x00000000080003f8        0x4
+                0x00000000080003f8                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x00000000080003dc        0x4 /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
-                0x00000000080003e0                PROVIDE (__init_array_end = .)
+ .init_array    0x00000000080003f8        0x4 /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
+                0x00000000080003fc                PROVIDE (__init_array_end = .)
 
-.fini_array     0x00000000080003e0        0x4
+.fini_array     0x00000000080003fc        0x4
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x00000000080003e0        0x4 /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
+ .fini_array    0x00000000080003fc        0x4 /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x00000000080003e4                _sidata = LOADADDR (.data)
+                0x0000000008000400                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000        0x4 load address 0x00000000080003e4
+.data           0x0000000020000000        0xc load address 0x0000000008000400
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
  *(.data*)
- .data.GPIOC    0x0000000020000000        0x4 ./src/drivers/gpio.o
-                0x0000000020000000                GPIOC
-                0x0000000020000004                . = ALIGN (0x4)
-                0x0000000020000004                _edata = .
+ .data.GPIOS    0x0000000020000000        0xc ./src/drivers/gpio.o
+                0x0000000020000000                GPIOS
+                0x000000002000000c                . = ALIGN (0x4)
+                0x000000002000000c                _edata = .
 
-.igot.plt       0x0000000020000004        0x0 load address 0x00000000080003e8
- .igot.plt      0x0000000020000004        0x0 /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
-                0x0000000020000004                . = ALIGN (0x4)
+.igot.plt       0x000000002000000c        0x0 load address 0x000000000800040c
+ .igot.plt      0x000000002000000c        0x0 /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
+                0x000000002000000c                . = ALIGN (0x4)
 
-.bss            0x0000000020000004       0x20 load address 0x00000000080003e8
-                0x0000000020000004                _sbss = .
-                0x0000000020000004                __bss_start__ = _sbss
+.bss            0x000000002000000c       0x20 load address 0x000000000800040c
+                0x000000002000000c                _sbss = .
+                0x000000002000000c                __bss_start__ = _sbss
  *(.bss)
- .bss           0x0000000020000004       0x1c /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
+ .bss           0x000000002000000c       0x1c /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
  *(.bss*)
  .bss.systick_ticks
-                0x0000000020000020        0x4 ./src/drivers/systick.o
-                0x0000000020000020                systick_ticks
+                0x0000000020000028        0x4 ./src/drivers/systick.o
+                0x0000000020000028                systick_ticks
  *(COMMON)
-                0x0000000020000024                . = ALIGN (0x4)
-                0x0000000020000024                _ebss = .
-                0x0000000020000024                __bss_end__ = _ebss
+                0x000000002000002c                . = ALIGN (0x4)
+                0x000000002000002c                _ebss = .
+                0x000000002000002c                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x0000000020000024      0x604 load address 0x00000000080003e8
-                0x0000000020000028                . = ALIGN (0x8)
- *fill*         0x0000000020000024        0x4 
+                0x000000002000002c      0x604 load address 0x000000000800040c
+                0x0000000020000030                . = ALIGN (0x8)
+ *fill*         0x000000002000002c        0x4 
                 [!provide]                        PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
-                0x0000000020000228                . = (. + _Min_Heap_Size)
- *fill*         0x0000000020000028      0x200 
-                0x0000000020000628                . = (. + _Min_Stack_Size)
- *fill*         0x0000000020000228      0x400 
-                0x0000000020000628                . = ALIGN (0x8)
+                0x0000000020000230                . = (. + _Min_Heap_Size)
+ *fill*         0x0000000020000030      0x200 
+                0x0000000020000630                . = (. + _Min_Stack_Size)
+ *fill*         0x0000000020000230      0x400 
+                0x0000000020000630                . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -378,29 +395,29 @@ LOAD /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none
 LOAD /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libm.a
 LOAD /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/libgcc.a
 
-.debug_line     0x0000000000000000      0x732
+.debug_line     0x0000000000000000      0x6ee
  .debug_line    0x0000000000000000       0x6c ./src/startup.o
- .debug_line    0x000000000000006c      0x10c ./src/main.o
- .debug_line    0x0000000000000178       0xe0 ./src/drivers/flash.o
- .debug_line    0x0000000000000258      0x1ab ./src/drivers/rcc.o
- .debug_line    0x0000000000000403      0x1c9 ./src/drivers/gpio.o
- .debug_line    0x00000000000005cc      0x166 ./src/drivers/systick.o
+ .debug_line    0x000000000000006c       0x8d ./src/main.o
+ .debug_line    0x00000000000000f9       0xe2 ./src/drivers/flash.o
+ .debug_line    0x00000000000001db      0x1bb ./src/drivers/rcc.o
+ .debug_line    0x0000000000000396      0x1f2 ./src/drivers/gpio.o
+ .debug_line    0x0000000000000588      0x166 ./src/drivers/systick.o
 
-.debug_info     0x0000000000000000      0xaec
+.debug_info     0x0000000000000000      0xa50
  .debug_info    0x0000000000000000       0x22 ./src/startup.o
- .debug_info    0x0000000000000022      0x232 ./src/main.o
- .debug_info    0x0000000000000254      0x12b ./src/drivers/flash.o
- .debug_info    0x000000000000037f      0x30a ./src/drivers/rcc.o
- .debug_info    0x0000000000000689      0x2d0 ./src/drivers/gpio.o
- .debug_info    0x0000000000000959      0x193 ./src/drivers/systick.o
+ .debug_info    0x0000000000000022      0x164 ./src/main.o
+ .debug_info    0x0000000000000186      0x12b ./src/drivers/flash.o
+ .debug_info    0x00000000000002b1      0x30a ./src/drivers/rcc.o
+ .debug_info    0x00000000000005bb      0x302 ./src/drivers/gpio.o
+ .debug_info    0x00000000000008bd      0x193 ./src/drivers/systick.o
 
-.debug_abbrev   0x0000000000000000      0x4d6
+.debug_abbrev   0x0000000000000000      0x4a6
  .debug_abbrev  0x0000000000000000       0x12 ./src/startup.o
- .debug_abbrev  0x0000000000000012       0xee ./src/main.o
- .debug_abbrev  0x0000000000000100       0xa7 ./src/drivers/flash.o
- .debug_abbrev  0x00000000000001a7       0xc6 ./src/drivers/rcc.o
- .debug_abbrev  0x000000000000026d      0x13c ./src/drivers/gpio.o
- .debug_abbrev  0x00000000000003a9      0x12d ./src/drivers/systick.o
+ .debug_abbrev  0x0000000000000012       0x8b ./src/main.o
+ .debug_abbrev  0x000000000000009d       0xa7 ./src/drivers/flash.o
+ .debug_abbrev  0x0000000000000144       0xc6 ./src/drivers/rcc.o
+ .debug_abbrev  0x000000000000020a      0x16f ./src/drivers/gpio.o
+ .debug_abbrev  0x0000000000000379      0x12d ./src/drivers/systick.o
 
 .debug_aranges  0x0000000000000000       0xf8
  .debug_aranges
@@ -416,17 +433,17 @@ LOAD /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/lib
  .debug_aranges
                 0x00000000000000c0       0x38 ./src/drivers/systick.o
 
-.debug_str      0x0000000000000000      0x3f2
+.debug_str      0x0000000000000000      0x3eb
  .debug_str     0x0000000000000000       0x52 ./src/startup.o
- .debug_str     0x0000000000000052      0x15e ./src/main.o
-                                        0x1d1 (size before relaxing)
- .debug_str     0x00000000000001b0       0x3f ./src/drivers/flash.o
+ .debug_str     0x0000000000000052      0x121 ./src/main.o
+                                        0x18b (size before relaxing)
+ .debug_str     0x0000000000000173       0x4a ./src/drivers/flash.o
                                         0x19d (size before relaxing)
- .debug_str     0x00000000000001ef      0x146 ./src/drivers/rcc.o
+ .debug_str     0x00000000000001bd      0x146 ./src/drivers/rcc.o
                                         0x2bd (size before relaxing)
- .debug_str     0x0000000000000335       0x50 ./src/drivers/gpio.o
-                                        0x202 (size before relaxing)
- .debug_str     0x0000000000000385       0x6d ./src/drivers/systick.o
+ .debug_str     0x0000000000000303       0x7b ./src/drivers/gpio.o
+                                        0x1fb (size before relaxing)
+ .debug_str     0x000000000000037e       0x6d ./src/drivers/systick.o
                                         0x1de (size before relaxing)
 
 .debug_ranges   0x0000000000000000       0xa0
@@ -437,11 +454,11 @@ LOAD /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/lib
  .debug_ranges  0x0000000000000050       0x28 ./src/drivers/gpio.o
  .debug_ranges  0x0000000000000078       0x28 ./src/drivers/systick.o
 
-.debug_loc      0x0000000000000000      0x14b
+.debug_loc      0x0000000000000000      0x23a
  .debug_loc     0x0000000000000000       0x20 ./src/main.o
  .debug_loc     0x0000000000000020       0x20 ./src/drivers/rcc.o
- .debug_loc     0x0000000000000040       0xf6 ./src/drivers/gpio.o
- .debug_loc     0x0000000000000136       0x15 ./src/drivers/systick.o
+ .debug_loc     0x0000000000000040      0x1e5 ./src/drivers/gpio.o
+ .debug_loc     0x0000000000000225       0x15 ./src/drivers/systick.o
 
 .comment        0x0000000000000000       0x49
  .comment       0x0000000000000000       0x49 ./src/main.o
@@ -451,12 +468,12 @@ LOAD /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/lib
  .comment       0x0000000000000049       0x4a ./src/drivers/gpio.o
  .comment       0x0000000000000049       0x4a ./src/drivers/systick.o
 
-.debug_frame    0x0000000000000000      0x118
+.debug_frame    0x0000000000000000      0x124
  .debug_frame   0x0000000000000000       0x28 ./src/main.o
  .debug_frame   0x0000000000000028       0x20 ./src/drivers/flash.o
  .debug_frame   0x0000000000000048       0x28 ./src/drivers/rcc.o
- .debug_frame   0x0000000000000070       0x58 ./src/drivers/gpio.o
- .debug_frame   0x00000000000000c8       0x50 ./src/drivers/systick.o
+ .debug_frame   0x0000000000000070       0x64 ./src/drivers/gpio.o
+ .debug_frame   0x00000000000000d4       0x50 ./src/drivers/systick.o
 
 Cross Reference Table
 
@@ -490,10 +507,7 @@ EXTI4_IRQHandler                                  ./src/startup.o
 EXTI9_5_IRQHandler                                ./src/startup.o
 FLASH_IRQHandler                                  ./src/startup.o
 FPU_IRQHandler                                    ./src/startup.o
-GPIOA                                             ./src/drivers/gpio.o
-GPIOB                                             ./src/drivers/gpio.o
-GPIOC                                             ./src/drivers/gpio.o
-                                                  ./src/main.o
+GPIOS                                             ./src/drivers/gpio.o
 HardFault_Handler                                 ./src/startup.o
 I2C1_ER_IRQHandler                                ./src/startup.o
 I2C1_EV_IRQHandler                                ./src/startup.o
@@ -588,6 +602,8 @@ main                                              ./src/main.o
                                                   /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/crt0.o
 memset                                            /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(lib_a-memset.o)
                                                   /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/crt0.o
+nvic_disable                                      ./src/drivers/nvic.o
+nvic_enable                                       ./src/drivers/nvic.o
 rcc_init                                          ./src/drivers/rcc.o
                                                   ./src/main.o
 software_init_hook                                /usr/share/gcc-arm/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/crt0.o

@@ -4,10 +4,11 @@
 volatile uint32_t systick_ticks;
 
 
-void systick_init(uint32_t load_val) {
+void systick_init() {
 	volatile SYSTICK_t* systick = (SYSTICK_t*)ADDR_BASE_TICK;
 	// set top value
-	systick->load = load_val - 1;
+	// divide system clock so we get a 1kHz interrupt
+	systick->load = ((CLOCK_AHB / 8) / 1000);
 	// reset value
 	systick->val = 0;
 	// enable systick: enable, enable int, ahb/8
